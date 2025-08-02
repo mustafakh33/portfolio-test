@@ -8,8 +8,8 @@ import BackToTopButton from './components/BackToTopButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Alex Smith - Photographer',
-  description: 'Professional photographer and designer portfolio',
+  title: 'Ahmed Diaa - Video Editor',
+  description: 'Professional Video Editor and Colorist',
 }
 
 export default function RootLayout({
