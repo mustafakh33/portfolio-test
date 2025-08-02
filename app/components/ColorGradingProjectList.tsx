@@ -47,6 +47,7 @@ export default function ColorGradingProjectList({
                   <div className="aspect-[9/16] rounded-lg overflow-hidden border shadow-md">
                     <video
                       src={project.videoBeforeUrl}
+                      preload="metadata"
                       controls
                       playsInline
                       className="w-full h-full object-cover"

@@ -42,6 +42,7 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
                   <div className="aspect-[9/16] rounded-lg overflow-hidden border shadow-lg">
                     <video
                       src={project.videoUrl}
+                      preload="metadata"
                       controls
                       playsInline
                       className="w-full h-full object-cover bg-black"
@@ -52,6 +53,7 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
                 <div className="w-full aspect-video rounded-lg overflow-hidden border shadow-lg">
                   <video
                     src={project.videoUrl}
+                    preload="metadata"
                     controls
                     playsInline
                     className="w-full h-full object-cover bg-black"
