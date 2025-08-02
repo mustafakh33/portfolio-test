@@ -43,7 +43,7 @@ export default function ColorGradingProjectList({ projects }: { projects: any[] 
                 <div>
                   <h3 className="text-xl font-semibold text-text-secondary mb-3">Before</h3>
                   <div className="aspect-[9/16] rounded-lg overflow-hidden border shadow-md">
-                    <video src={project.videoBeforeUrl} controls loop  playsInline className="w-full h-full object-cover" />
+                    <video src={project.videoBeforeUrl} controls   playsInline className="w-full h-full object-cover" />
                   </div>
                 </div>
               )}

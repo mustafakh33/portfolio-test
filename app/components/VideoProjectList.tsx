@@ -54,7 +54,7 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
                     <video
                       src={project.videoUrl}
                       controls
-                      loop
+               
                     
                       playsInline
                       className="w-full h-full object-cover bg-black"
@@ -67,7 +67,7 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
                   <video
                     src={project.videoUrl}
                     controls
-                    loop
+              
                   
                     playsInline
                     className="w-full h-full object-cover bg-black"

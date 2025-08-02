@@ -161,21 +161,48 @@ export default {
       hidden: ({ parent }: { parent: any }) => 
         parent?.category?._ref !== 'ce2492e3-9603-429f-a103-ac4c07bddf03',
     },
+    // {
+    //   name: 'videoType',
+    //   title: 'Video Type',
+    //   type: 'string',
+    //   options: {
+    //     list: [
+    //       { title: 'Widescreen (16:9)', value: 'widescreen' },
+    //       { title: 'Reel (9:16)', value: 'reel' },
+    //     ],
+    //     layout: 'radio',
+    //   },
+    //   validation: (Rule: any) => Rule.required(),
+    //   hidden: ({ parent }: { parent: any }) => 
+    //     parent?.category?._ref !== 'ce2492e3-9603-429f-a103-ac4c07bddf03',
+    // },
     {
-      name: 'videoType',
-      title: 'Video Type',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Widescreen (16:9)', value: 'widescreen' },
-          { title: 'Reel (9:16)', value: 'reel' },
-        ],
-        layout: 'radio',
-      },
-      validation: (Rule: any) => Rule.required(),
-      hidden: ({ parent }: { parent: any }) => 
-        parent?.category?._ref !== 'ce2492e3-9603-429f-a103-ac4c07bddf03',
-    },
+  name: 'videoType',
+  title: 'Video Type',
+  type: 'string',
+  options: {
+    list: [
+      { title: 'Widescreen (16:9)', value: 'widescreen' },
+      { title: 'Reel (9:16)', value: 'reel' },
+    ],
+    layout: 'radio',
+  },
+  // The new, corrected validation logic
+  validation: (Rule: any) => Rule.custom((value: any, context: any) => {
+    // Check if the selected category is "Video Editing" using its ID
+    const isVideoEditing = context.parent?.category?._ref === 'ce2492e3-9603-429f-a103-ac4c07bddf03';
+    
+    // If the category is Video Editing, then a value for this field is required
+    if (isVideoEditing && !value) {
+      return 'Video Type is required for this category.';
+    }
+    
+    // For all other categories, this validation passes
+    return true;
+  }),
+  hidden: ({ parent }: { parent: any }) => 
+    parent?.category?._ref !== 'ce2492e3-9603-429f-a103-ac4c07bddf03',
+},
     // --- حقول خاصة بـ Color Grading ---
     {
       name: 'videoBeforeUrl',
