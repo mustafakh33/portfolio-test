@@ -1,11 +1,8 @@
-// app/portfolio/page.tsx
-
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import PortfolioCategoryList from "@/app/components/PortfolioCategoryList";
-import { portfolioData } from "@/app/lib/data"; // استيراد البيانات المحلية
+import { portfolioData } from "@/app/lib/data"; 
 
 const PortfolioHomePage = () => {
-  // تحويل كائن البيانات إلى مصفوفة لتمريرها
   const categories = Object.values(portfolioData);
 
   return (
@@ -21,7 +18,6 @@ const PortfolioHomePage = () => {
           Explore my work, categorized by my core specializations.
         </p>
 
-        {/* استدعاء المكون الجديد وتمرير البيانات إليه */}
         <PortfolioCategoryList categories={categories} />
       </div>
     </main>

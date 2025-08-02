@@ -1,5 +1,3 @@
-// lib/data.ts
-
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import {
   HiHome,
@@ -13,12 +11,7 @@ import {
 import { IoFilmOutline, IoColorPaletteOutline } from "react-icons/io5";
 
 import {
-  NavigationLink,
-  SocialLink,
-  PersonalDetail,
-  Skill,
   ResumeEntry,
-  Service,
   SkillsData,
   ServicesData,
   ContactData,
@@ -39,7 +32,6 @@ import imgPodcast from "../../public/image/Podcast.jpg";
 import imgShortFilm from "../../public/image/Short film.jpg";
 import imgPromo from "../../public/image/Promo.jpg";
 import imgReels from "../../public/image/imgReels.jpeg";
-import imgOnMillion from "../../public/image/onmillion.jpg";
 
 // Sidebar Data
 export const sidebarData: SidebarData = {
@@ -145,12 +137,7 @@ export const resumeData = {
   ] as ResumeEntry[],
 };
 
-/*===========================================================================================
-==============================================================================================
-============================== start Portfolio Section Data ===================================
-==============================================================================================
-==============================================================================================*/
-
+// Portfolio Section Data
 
 import imgscreenshots2 from "../../public/video/color grading/v2/v2.png";
 import imgscreenshots3 from "../../public/video/color grading/v3/v3.png";
@@ -331,7 +318,7 @@ export const portfolioData: PortfolioData = {
           {
             id: 20,
             videoUrl: "/video/video editing/promo/MATHAF .mp4",
-              videoType: "widescreen",
+            videoType: "widescreen",
           },
           {
             id: 21,
@@ -369,7 +356,7 @@ export const portfolioData: PortfolioData = {
           {
             id: 24,
             videoUrl: "/video/video editing/short film/Day 01.mp4",
-              videoType: "widescreen",
+            videoType: "widescreen",
           },
         ],
       },
@@ -385,63 +372,54 @@ export const portfolioData: PortfolioData = {
     projects: [
       {
         id: 25,
-        // title: "Music Video - Cinematic Look",
         videoBeforeUrl: "/video/color grading/v2/v2.mp4",
         videoAfterUrl: "/video/color grading/v2/v2.mov",
         screenshots: [imgscreenshots2],
       },
       {
         id: 26,
-        // title: "Short Film - Sci-Fi Grading",
         videoBeforeUrl: "/video/color grading/v3/v3b.mp4",
         videoAfterUrl: "/video/color grading/v3/v3.mov",
         screenshots: [imgscreenshots3],
       },
       {
         id: 27,
-        // title: "Commercial Ad - Vibrant Colors",
         videoBeforeUrl: "/video/color grading/v4/v4.mp4",
         videoAfterUrl: "/video/color grading/v4/v4 .mov",
         screenshots: [imgscreenshots4],
       },
       {
         id: 28,
-        // title: "Commercial Ad - Vibrant Colors",
         videoBeforeUrl: "/video/color grading/v5/5b.mp4",
         videoAfterUrl: "/video/color grading/v5/v5.mov",
         screenshots: [imgscreenshots5],
       },
       {
         id: 29,
-        // title: "Commercial Ad - Vibrant Colors",
         videoBeforeUrl: "/video/color grading/v6/v6.mp4",
         videoAfterUrl: "/video/color grading/v6/vid 6.mov",
         screenshots: [imgscreenshots6],
       },
       {
         id: 30,
-        // title: "Commercial Ad - Vibrant Colors",
         videoBeforeUrl: "/video/color grading/v7/v7.mp4",
         videoAfterUrl: "/video/color grading/v7/v7.mov",
         screenshots: [imgscreenshots7],
       },
       {
         id: 31,
-        // title: "Commercial Ad - Vibrant Colors",
         videoBeforeUrl: "/video/color grading/v8/v8.mp4",
         videoAfterUrl: "/video/color grading/v8/v8.mov",
         screenshots: [imgscreenshots8],
       },
       {
         id: 32,
-        // title: "Commercial Ad - Vibrant Colors",
         videoBeforeUrl: "/video/color grading/v9/v9.mp4",
         videoAfterUrl: "/video/color grading/v9/v9.mov",
         screenshots: [imgscreenshots9],
       },
       {
         id: 33,
-        // title: "Commercial Ad - Vibrant Colors",
         videoBeforeUrl: "/video/color grading/v10/v10.mp4",
         videoAfterUrl: "/video/color grading/v10/v10.mov",
         screenshots: [imgscreenshots10],
@@ -449,11 +427,6 @@ export const portfolioData: PortfolioData = {
     ],
   },
 };
-/*===========================================================================================
-==============================================================================================
-============================== end Portfolio Section Data ===================================
-==============================================================================================
-==============================================================================================*/
 
 // Services Section Data
 export const servicesData: ServicesData = {

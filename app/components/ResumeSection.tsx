@@ -7,7 +7,6 @@ import { motion, Variants } from 'framer-motion';
 const ResumeSection = () => {
   const { summary, education, experience } = resumeData;
 
-  // 2. تعريف متغيرات الحركة
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -18,7 +17,7 @@ const ResumeSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // تأخير ظهور كل عنصر ابن
+        staggerChildren: 0.3, 
       },
     },
   };
@@ -45,7 +44,6 @@ const ResumeSection = () => {
         </motion.div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12">
-          {/* Left Column */}
           <motion.div 
             variants={sectionVariants}
             initial="hidden"
@@ -87,7 +85,6 @@ const ResumeSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Column */}
           <motion.div
             variants={sectionVariants}
             initial="hidden"

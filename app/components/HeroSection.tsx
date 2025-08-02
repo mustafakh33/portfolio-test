@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { heroData } from "../lib/data";
-import { motion } from "framer-motion"; // <-- 1. استيراد المكتبة
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const { name, titles, backgroundImage } = heroData;
@@ -12,42 +12,43 @@ const HeroSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    // ... (Your typing animation logic remains the same)
     const currentWord = titles[currentWordIndex];
     const shouldDelete = isDeleting;
-    const timeout = setTimeout(() => {
-      if (!shouldDelete) {
-        if (displayText.length < currentWord.length) {
-          setDisplayText(currentWord.slice(0, displayText.length + 1));
+    const timeout = setTimeout(
+      () => {
+        if (!shouldDelete) {
+          if (displayText.length < currentWord.length) {
+            setDisplayText(currentWord.slice(0, displayText.length + 1));
+          } else {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          if (displayText.length > 0) {
+            setDisplayText(displayText.slice(0, -1));
+          } else {
+            setIsDeleting(false);
+            setCurrentWordIndex((prev) => (prev + 1) % titles.length);
+          }
         }
-      } else {
-        if (displayText.length > 0) {
-          setDisplayText(displayText.slice(0, -1));
-        } else {
-          setIsDeleting(false);
-          setCurrentWordIndex((prev) => (prev + 1) % titles.length);
-        }
-      }
-    }, shouldDelete ? 100 : 150);
+      },
+      shouldDelete ? 100 : 150
+    );
     return () => clearTimeout(timeout);
   }, [displayText, currentWordIndex, isDeleting, titles]);
 
-  // 2. تعريف متغيرات الحركة (Animation Variants)
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // تأخير ظهور كل عنصر ابن
+        staggerChildren: 0.3,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 }, // يبدأ شفافًا ومتحركًا للأسفل 20 بكسل
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // يظهر ويصعد لمكانه
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
@@ -59,7 +60,6 @@ const HeroSection = () => {
         }}
       />
       <div className="relative z-10 flex items-center h-full px-4">
-        {/* 3. تحويل العناصر إلى motion elements وتطبيق الحركة */}
         <motion.div
           variants={containerVariants}
           initial="hidden"

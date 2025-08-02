@@ -1,22 +1,20 @@
-// app/components/PortfolioCategoryList.tsx
-
-"use client"; // هذا المكون يستخدم الحركة والتصميم في المتصفح
+"use client";
 
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { motion, Variants } from "framer-motion";
 
-// تعريف نوع البيانات التي سيستقبلها المكون
 interface Category {
   title: string;
   description: string;
   imageUrl: string | StaticImageData;
 }
 
-// يستقبل المكون البيانات كـ prop
-export default function PortfolioCategoryList({ categories }: { categories: Category[] }) {
-  
-  // دالة لإنشاء الروابط من العناوين
+export default function PortfolioCategoryList({
+  categories,
+}: {
+  categories: Category[];
+}) {
   const generateSlug = (title: string): string => {
     return title.toLowerCase().replace(/\s+/g, "-");
   };
@@ -32,7 +30,11 @@ export default function PortfolioCategoryList({ categories }: { categories: Cate
 
   const cardVariant: Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -57,12 +59,8 @@ export default function PortfolioCategoryList({ categories }: { categories: Cate
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
               <div className="absolute bottom-0 left-0 p-8 text-white">
-                <h2 className="text-3xl font-bold mb-2">
-                  {category.title}
-                </h2>
-                <p className="text-gray-300 mb-4">
-                  {category.description}
-                </p>
+                <h2 className="text-3xl font-bold mb-2">{category.title}</h2>
+                <p className="text-gray-300 mb-4">{category.description}</p>
                 <span className="font-semibold text-primary group-hover:underline">
                   View Projects &rarr;
                 </span>

@@ -14,45 +14,28 @@ import { motion, Variants } from "framer-motion";
 const ContactSection = () => {
   const { intro, address, phone, email } = contactData;
   const [state, handleSubmit] = useForm("mnnzvdjj");
-
-  // States for input fields
   const [name, setName] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  // Clear form fields after successful submission
   useEffect(() => {
     if (state.succeeded) {
-      // Clear all form fields
       setName("");
       setEmailInput("");
       setSubject("");
       setMessage("");
-
-      // Optional: Show success message for a few seconds then hide it
-      // You can remove this if you want the success message to persist
-      const timer = setTimeout(() => {
-        // Reset the form state if you want to hide the success message
-        // Note: This will reset the entire form state, including the success status
-        // window.location.reload(); // Only if you want to completely reset
-      }, 5000);
+      const timer = setTimeout(() => {}, 5000);
 
       return () => clearTimeout(timer);
     }
   }, [state.succeeded]);
 
-  // Enhanced form submission handler
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // Call Formspree's handleSubmit
     await handleSubmit(e);
-
-    // The useEffect above will handle clearing the fields when state.succeeded becomes true
   };
 
-  // Alternative: Manual reset function (if you want a reset button)
   const resetForm = () => {
     setName("");
     setEmailInput("");
@@ -264,7 +247,6 @@ const ContactSection = () => {
                   {state.submitting ? "Sending..." : "Send Message"}
                 </button>
 
-                {/* Optional: Add a reset button */}
                 {(name || emailInput || subject || message) &&
                   !state.submitting && (
                     <button

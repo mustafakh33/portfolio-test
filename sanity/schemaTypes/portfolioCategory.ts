@@ -1,4 +1,3 @@
-// studio/schemas/portfolioCategory.ts
 export default {
   name: 'portfolioCategory',
   title: 'Portfolio Category',
@@ -14,7 +13,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title', // سيقوم بإنشاء الـ slug تلقائيًا من العنوان
+        source: 'title', 
         maxLength: 96,
       },
     },
@@ -28,7 +27,7 @@ export default {
       title: 'Image URL',
       type: 'image',
       options: {
-        hotspot: true, // يتيح للعميل تحديد الجزء المهم من الصورة
+        hotspot: true,
       },
     },
   ],

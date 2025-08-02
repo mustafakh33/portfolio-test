@@ -1,5 +1,3 @@
-// lib/types.ts
-
 import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
@@ -58,37 +56,6 @@ export type ResumeEntry = {
   description?: string;
   responsibilities?: string[];
 };
-
-// export type PortfolioCategory = {
-//   title: string;
-//   description: string;
-//   imageUrl: StaticImageData;
-//   // href: string;
-// };
-
-// export type VideoEditingSubCategory = {
-//   title: string;
-//   description: string;
-//   // href: string;
-//   imageUrl: StaticImageData | string; // <-- إضافة خاصية الصورة هنا
-// };
-// export interface PortfolioLink {
-//   label: string; // مثال: "Live Website", "Behance"
-//   url: string;
-// }
-// export type PortfolioItem = {
-//   id: number;
-//   title: string;
-//   category: string; // 'VIDEO EDITING' or 'COLOR GRADING'
-//   subcategory: string; // e.g., 'Reels', 'Intro', 'Podcast'
-//   subcategorySlug: string; // e.g., 'reels', 'intro', 'podcast'
-//   imageUrl: string;
-//   description: string;
-//   tools: string[];
-//   screenshots: string[];
-//   videoUrl?: string; // <-- إضافة خاصية الفيديو (اختيارية)
-//   links?: PortfolioLink[];
-// };
 
 export interface ProjectLink {
   label: string;

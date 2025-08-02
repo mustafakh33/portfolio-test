@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import { IoIosArrowForward } from 'react-icons/io';
 import { aboutData } from '../lib/data';
-import { motion, Variants } from 'framer-motion'; // <-- 1. استيراد Variants
+import { motion, Variants } from 'framer-motion'; 
 
 const AboutSection = () => {
   const { title, intro, bio, personalDetails, image } = aboutData;
 
-  // 2. تطبيق النوع على كل متغير
+
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },

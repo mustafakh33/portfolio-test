@@ -1,15 +1,12 @@
-"use client"; // هذا المكون يستخدم framer-motion لذا يجب أن يكون client component
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { portfolioData } from "../lib/data"; // 1. استيراد هيكل البيانات الجديد
+import { portfolioData } from "../lib/data";
 
 const PortfolioHomePage = () => {
-  // 2. تحويل كائن البيانات إلى مصفوفة يمكننا المرور عليها
   const categories = Object.values(portfolioData);
-
-  // 3. دالة لإنشاء الروابط من العناوين
   const generateSlug = (title: string): string => {
     return title.toLowerCase().replace(/\s+/g, "-");
   };
@@ -34,7 +31,11 @@ const PortfolioHomePage = () => {
 
   const cardVariant: Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -67,7 +68,6 @@ const PortfolioHomePage = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          {/* 4. المرور على مصفوفة الفئات الجديدة */}
           {categories.map((category) => (
             <motion.div key={category.title} variants={cardVariant}>
               <Link href={`/portfolio/${generateSlug(category.title)}`}>
@@ -82,7 +82,9 @@ const PortfolioHomePage = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   </div>
                   <div className="absolute bottom-0 left-0 p-8 text-white">
-                    <h2 className="text-3xl font-bold mb-2">{category.title}</h2>
+                    <h2 className="text-3xl font-bold mb-2">
+                      {category.title}
+                    </h2>
                     <p className="text-gray-300 mb-4">{category.description}</p>
                     <span className="font-semibold text-primary group-hover:underline">
                       View Projects &rarr;

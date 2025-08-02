@@ -1,12 +1,8 @@
-// app/portfolio/video-editing/page.tsx
-
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import SubCategoryGrid from "@/app/components/SubCategoryGrid";
-import { portfolioData } from "@/app/lib/data"; // 1. استيراد البيانات المحلية
+import { portfolioData } from "@/app/lib/data"; 
 
-// 2. لم نعد بحاجة لـ async أو Sanity client هنا
 const VideoEditingSubCategoriesPage = () => {
-  // 3. الوصول إلى البيانات مباشرة من الكائن
   const subCategories = portfolioData.videoEditing.subCategories;
   const pageTitle = portfolioData.videoEditing.title;
 
@@ -20,7 +16,6 @@ const VideoEditingSubCategoriesPage = () => {
           <Breadcrumbs />
         </div>
 
-        {/* تمرير البيانات المحلية إلى مكون العرض */}
         <SubCategoryGrid subCategories={subCategories} />
         
       </div>

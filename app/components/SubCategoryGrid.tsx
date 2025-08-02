@@ -1,28 +1,31 @@
-// app/components/SubCategoryGrid.tsx
-
-"use client"; // <-- مكون للمتصفح بسبب استخدام framer-motion
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
 
-// يستقبل المكون البيانات كـ prop
-export default function SubCategoryGrid({ subCategories }: { subCategories: any[] }) {
-  
-  // تعريف متغيرات الحركة
+export default function SubCategoryGrid({
+  subCategories,
+}: {
+  subCategories: any[];
+}) {
   const staggerContainer: Variants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2, // تأخير ظهور كل كرت عن الآخر
+        staggerChildren: 0.2,
       },
     },
   };
 
   const cardVariant: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -34,7 +37,6 @@ export default function SubCategoryGrid({ subCategories }: { subCategories: any[
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
     >
       {subCategories.map((subCategory: any) => (
-        // تطبيق الحركة على كل عنصر
         <motion.div key={subCategory.title} variants={cardVariant}>
           <Link href={`/portfolio/video-editing/${subCategory.slug}`}>
             <div className="group bg-white rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full overflow-hidden">

@@ -1,4 +1,3 @@
-// app/lib/icons.tsx
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as IoIcons from 'react-icons/io5';
@@ -16,7 +15,7 @@ const DynamicIcon: React.FC<DynamicIconProps> = ({ name, className }) => {
   const IconComponent = iconLibs[name as IconName];
 
   if (!IconComponent) {
-    return <FaIcons.FaQuestionCircle className={className} />; // أيقونة احتياطية
+    return <FaIcons.FaQuestionCircle className={className} />; 
   }
 
   return <IconComponent className={className} />;

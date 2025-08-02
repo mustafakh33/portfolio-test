@@ -1,22 +1,25 @@
-"use client"; 
+"use client";
 
 import { servicesData } from "../lib/data";
-import { motion, Variants } from "framer-motion"; // <-- 1. استيراد المكتبة
+import { motion, Variants } from "framer-motion";
 
 const ServicesSection = () => {
   const { intro, serviceList } = servicesData;
 
-  // 2. تعريف متغيرات الحركة
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const listVariants: Variants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.3, // تأخير ظهور كل كارت عن الآخر
+        staggerChildren: 0.3,
       },
     },
   };
@@ -32,7 +35,6 @@ const ServicesSection = () => {
       className="min-h-screen bg-white py-16 px-4 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        {/* 3. تطبيق الحركة على العنوان والوصف */}
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -48,8 +50,7 @@ const ServicesSection = () => {
             {intro}
           </p>
         </motion.div>
-        
-        {/* 4. تطبيق الحركة على حاوية الكروت (للتأثير المتتابع) */}
+
         <motion.div
           variants={listVariants}
           initial="hidden"
