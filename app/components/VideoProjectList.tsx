@@ -47,7 +47,6 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
                     <video
                       // هنا بنستخدم project.videoUrl مباشرة في الـ src
                       src={project.videoUrl}
-                      preload="metadata"
                       controls
                       playsInline
                       className="w-full h-full object-cover bg-black"
