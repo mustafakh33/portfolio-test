@@ -11,7 +11,7 @@ async function getSubCategoryData(slug: string) {
       _id,
       title,
       description,
-      "videoUrl": videoUrl.asset->url,
+      "videoUrl": videoUrl,
       videoType,
       "screenshots": screenshots[].asset->url,
       tools,

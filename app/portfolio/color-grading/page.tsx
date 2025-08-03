@@ -6,8 +6,8 @@ async function getColorGradingProjects() {
   const query = `*[_type == "project" && category->slug.current == "color-grading"] | order(_createdAt asc) {
     _id,
     title,
-    "videoBeforeUrl": videoBeforeUrl.asset->url,
-    "videoAfterUrl": videoAfterUrl.asset->url,
+"videoBeforeUrl": videoBeforeUrl,
+"videoAfterUrl": videoAfterUrl,
     "screenshots": screenshots[].asset->url
   }`;
 

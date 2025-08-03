@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { motion, Variants } from "framer-motion";
 
+// ده الكود الصحيح اللي بيستخدم تاج <video>
 export default function VideoProjectList({ projects }: { projects: any[] }) {
   const projectVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
@@ -28,19 +29,23 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
     <div className="space-y-12">
       {projects.map((project) => (
         <motion.section
-          key={project.id}
+          // استخدم project._id بدل project.id عشان تتجنب أخطاء الـ key
+          key={project._id}
           className="project-section"
           variants={projectVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
+          {/* هنا بنتأكد إن فيه رابط فيديو موجود */}
           {project.videoUrl && (
             <div className="mb-8 flex justify-center">
               {project.videoType === "reel" ? (
+                // كود عرض الريل (فيديو طولي)
                 <div className="w-full max-w-md">
                   <div className="aspect-[9/16] rounded-lg overflow-hidden border shadow-lg">
                     <video
+                      // هنا بنستخدم project.videoUrl مباشرة في الـ src
                       src={project.videoUrl}
                       preload="metadata"
                       controls
@@ -50,8 +55,10 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
                   </div>
                 </div>
               ) : (
+                // كود عرض الفيديو العادي (بالعرض)
                 <div className="w-full aspect-video rounded-lg overflow-hidden border shadow-lg">
                   <video
+                    // هنا بنستخدم project.videoUrl مباشرة في الـ src
                     src={project.videoUrl}
                     preload="metadata"
                     controls
@@ -63,6 +70,7 @@ export default function VideoProjectList({ projects }: { projects: any[] }) {
             </div>
           )}
 
+          {/* ... باقي الكود بتاعك كما هو ... */}
           <div className="grid grid-cols-1 gap-8">
             {project.description && (
               <div>

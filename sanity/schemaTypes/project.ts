@@ -33,8 +33,8 @@ export default {
     // --- حقول خاصة بـ Video Editing ---
     {
       name: "videoUrl",
-      title: "Video File",
-      type: "file",
+      title: "Video url",
+      type: "url",
       hidden: ({ parent }: { parent: any }) =>
         parent?.category?._ref !== "ce2492e3-9603-429f-a103-ac4c07bddf03",
     },
@@ -73,14 +73,14 @@ export default {
     {
       name: "videoBeforeUrl",
       title: "Video (Before Grading)",
-      type: "file",
+      type: "url",
       hidden: ({ parent }: { parent: any }) =>
         parent?.category?._ref === "ce2492e3-9603-429f-a103-ac4c07bddf03",
     },
     {
       name: "videoAfterUrl",
       title: "Video (After Grading)",
-      type: "file",
+      type: "url",
       hidden: ({ parent }: { parent: any }) =>
         parent?.category?._ref === "ce2492e3-9603-429f-a103-ac4c07bddf03",
     },
@@ -91,13 +91,7 @@ export default {
       type: "array",
       of: [{ type: "image", options: { hotspot: true } }],
     },
-    {
-      name: "tools",
-      title: "Tools Used",
-      type: "array",
-      of: [{ type: "string" }],
-      options: { layout: "tags" },
-    },
+
     {
       name: "links",
       title: "External Links",
